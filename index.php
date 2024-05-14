@@ -1,17 +1,18 @@
 <?php
- session_start();
+session_start();
 
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    header('Location: /login.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Nash</title>
-  </head>
-  <body>
-
+</head>
+<body>
     <h1>Assignment 1</h1>
-    <p> Welcome,<?=$_SESSION['username']?></p>
-
-
-  </body>
+    <p>Welcome, <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest' ?></p>
+</body>
 </html>
