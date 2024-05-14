@@ -14,5 +14,10 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 <body>
     <h1>Assignment 1</h1>
     <p>Welcome, <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest' ?></p>
+    <footer>
+        <p>
+            <a href="/logout.php">Click here to logout</a>
+        </p>
+    </footer>
 </body>
 </html>
